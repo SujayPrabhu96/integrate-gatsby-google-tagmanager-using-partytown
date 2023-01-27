@@ -15,24 +15,24 @@ export const onRenderBody = ({ setHeadComponents, setPreBodyComponents }) => {
         })(window,document,'script','dataLayer', '${process.env.GATSBY_GOOGLE_TAG_MANAGER_TRACKING_ID}');`,
       }}
     />,
-    <script
-      key="partytown-vanilla-config"
-      dangerouslySetInnerHTML={{
-        __html: `partytown = {
-         resolveUrl(url, location) {
-          if (
-            url.hostname === "www.google-analytics.com" &&
-            url.pathname.endsWith(".js")
-          ) {
-            var proxyUrl = new URL(location.origin+'/google-analytics');
-            proxyUrl.searchParams.append("url", url.href);
-            return proxyUrl;
-          }
-          return url;
-         }
-       }`,
-      }}
-    />,
+    // <script
+    //   key="partytown-vanilla-config"
+    //   dangerouslySetInnerHTML={{
+    //     __html: `partytown = {
+    //      resolveUrl(url, location) {
+    //       if (
+    //         url.hostname === "www.google-analytics.com" &&
+    //         url.pathname.endsWith(".js")
+    //       ) {
+    //         var proxyUrl = new URL(location.origin+'/google-analytics');
+    //         proxyUrl.searchParams.append("url", url.href);
+    //         return proxyUrl;
+    //       }
+    //       return url;
+    //      }
+    //    }`,
+    //   }}
+    // />,
   ]);
 
   setPreBodyComponents([
