@@ -9,4 +9,11 @@ exports.onPreBuild = async ({ actions: { createRedirect } }) => {
     toPath: `:url`,
     statusCode: 200,
   });
+
+  // This is only for GTM preview mode for debugging
+  createRedirect({
+    fromPath: `/googletagmanager/debug/bootstrap?url=:url`,
+    toPath: `:url`,
+    statusCode: 200,
+  });
 };
